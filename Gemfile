@@ -77,6 +77,5 @@ group :test do
 end
 
 gem "devise"
-gem "omniauth-spotify"
-gem 'oauth'
 gem 'rspotify'
+gem 'omniauth-rails_csrf_protection'

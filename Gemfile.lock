@@ -150,7 +150,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
-    minitest (5.17.0)
+    minitest (5.18.0)
     msgpack (1.6.1)
     multi_xml (0.6.0)
     net-imap (0.3.4)
@@ -168,12 +168,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
-    oauth (1.1.0)
-      oauth-tty (~> 1.0, >= 1.0.1)
-      snaky_hash (~> 2.0)
-      version_gem (~> 1.1)
-    oauth-tty (1.0.5)
-      version_gem (~> 1.1, >= 1.1.1)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -188,8 +182,9 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    omniauth-spotify (0.0.13)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     pg (1.4.6)
     public_suffix (5.0.1)
@@ -315,8 +310,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
-  oauth
-  omniauth-spotify
+  omniauth-rails_csrf_protection
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
