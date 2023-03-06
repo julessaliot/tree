@@ -75,3 +75,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "devise"
+gem "omniauth-spotify"
+gem 'oauth'
+gem 'rspotify'
