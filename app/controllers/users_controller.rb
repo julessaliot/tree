@@ -9,8 +9,16 @@ class UsersController < ApplicationController
 
     # Get user's top played artists and tracks
     spotify_user.top_artists
-    spotify_user.top_tracks(time_range: 'short_term') 
+    spotify_user.top_tracks(time_range: 'short_term')
 
     # Check doc for more
+  end
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 end
