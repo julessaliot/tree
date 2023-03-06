@@ -11,11 +11,22 @@ class UsersController < ApplicationController
 
    #create devise user
    @user = User.from_omniauth(request.env["omniauth.auth"])
+    # Get user's top played artists and tracks
+    spotify_user.top_artists
+    spotify_user.top_tracks(time_range: 'short_term')
 
    if @user.persisted?
      sign_in_and_redirect @user, event: :authentication # this will throw if @user is not activated
    else
     redirect_to root_path
    end
+  end
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 end
