@@ -5,7 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-RSpotify::authenticate("fe14b3fe7eff4b0d85ed67aeaf9cdb1f", "a553a9f5130645e2abe10a9b88825a1b")
+
 
 module TreeApp
   class Application < Rails::Application
@@ -24,5 +24,6 @@ module TreeApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    RSpotify.authenticate(ENV.fetch("SPOTIFY_CLIENT_ID"), ENV.fetch("SPOTIFY_SECRET"))
   end
 end
