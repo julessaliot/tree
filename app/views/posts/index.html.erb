@@ -1,0 +1,19 @@
+<h1>Discover new songs from your friends:</h1>
+
+<div class="card">
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.content %>
+      <% if post.spotify_track_id %>
+        <% track = RSpotify::Track.find(post.spotify_track_id) %>
+        <p><strong>Track:</strong> <%= track.name %></p>
+        <p><strong>Artist:</strong> <%= track.artists.first.name %></p>
+        <% if post.album_cover_url %>
+          <%= image_tag(post.album_cover_url, size: "100x100") %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+</div>
