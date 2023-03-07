@@ -4,7 +4,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <%= post.content %>
+      <%# <%= post.content %> 
       <% if post.spotify_track_id %>
         <% track = RSpotify::Track.find(post.spotify_track_id) %>
         <p><strong>Track:</strong> <%= track.name %></p>
