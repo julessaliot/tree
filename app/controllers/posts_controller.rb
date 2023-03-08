@@ -7,6 +7,29 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # def create
+  #   raise
+  #   track = RSpotify::Track.find(params[:post][:track_id])
+  #   @post = Post.new(post_params.merge(
+  #     track_name: track.name,
+  #     track_artist: track.artists.first.name,
+  #     track_release_date: track.album.release_date,
+  #     track_cover_url: track.album.images.first['url']
+  #   ))
+  #   @post.user = current_user
+  #   if @post.save
+  #     flash[:success] = "Post created!"
+  #     redirect_to @post
+  #   else
+  #     render 'new'
+  #   end
+  # end
+
+  # def search
+  #   @tracks = RSpotify::Track.search(params[:q])
+  # end
+
+
   def create
     @post = Post.new(post_params)
     @post.user = current_user
@@ -44,16 +67,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :track_id)
   end
 end
-
-# def create
-#   @post = Post.new(post_params)
-#   @post.user = current_user
-#   if @post.save
-#     redirect_to posts_path
-#   else
-#     render :new, status: :unprocessable_entity
-#   end
-# end
