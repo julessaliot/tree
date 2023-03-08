@@ -1,0 +1,70 @@
+.login-page {
+  background-image: asset-url('background_login.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.signup-page {
+  background-image: asset-url('background_login.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.tree-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px;
+  align-items: flex-start;
+}
+
+.tree-info h1 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 136.18%;
+  text-align: justify;
+  text-transform: uppercase;
+  color: #87DB1F;
+  text-shadow: 1px 1px 2px rgba(10, 81, 4, 0.8);
+}
+
+
+.devise-info-text {
+  padding-right: 40px;
+}
+
+.login {
+  background: rgba(4, 33, 2, 0.8);
+  border-radius: 25px 25px 0px 0px;
+}
+.login h2 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  color: #C2FC7A;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+.form-actions {
+  background: #87DB1F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.devise-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.inputs {
+  box-sizing: border-box;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
