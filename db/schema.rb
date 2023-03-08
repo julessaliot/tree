@@ -32,6 +32,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_140702) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "fine_print_contracts", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "version"
+    t.string "title", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.index ["name", "version"], name: "index_fine_print_contracts_on_name_and_version", unique: true
+  end
+
+  create_table "fine_print_signatures", id: :serial, force: :cascade do |t|
+    t.integer "contract_id", null: false
+    t.string "user_type", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.boolean "is_implicit", default: false, null: false
+    t.index ["contract_id"], name: "index_fine_print_signatures_on_contract_id"
+    t.index ["user_id", "user_type", "contract_id"], name: "index_fine_print_s_on_u_id_and_u_type_and_c_id", unique: true
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.bigint "asker_id"
     t.bigint "receiver_id"
