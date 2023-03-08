@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_175438) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_121635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_175438) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_favorites_on_post_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "fine_print_contracts", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "version"
+    t.string "title", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.index ["name", "version"], name: "index_fine_print_contracts_on_name_and_version", unique: true
+  end
+
+  create_table "fine_print_signatures", id: :serial, force: :cascade do |t|
+    t.integer "contract_id", null: false
+    t.string "user_type", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.boolean "is_implicit", default: false, null: false
+    t.index ["contract_id"], name: "index_fine_print_signatures_on_contract_id"
+    t.index ["user_id", "user_type", "contract_id"], name: "index_fine_print_s_on_u_id_and_u_type_and_c_id", unique: true
   end
 
   create_table "friendships", force: :cascade do |t|

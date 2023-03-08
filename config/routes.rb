@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#profile'
   get '/terms', to: 'pages#terms'
+  mount FinePrint::Engine => "/fine_print"
 
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create destroy]
