@@ -2,27 +2,26 @@
 
   <div class="tree-info">
     <div class="devise-info-text">
-      <h1>SHARE YOUR MUSIC, SHARE YOUR EMOTIONS!</h1>
+      <h1>SHARE YOUR <span style="color: rgba(4, 33, 2, 1);"> MUSIC,</span> SHARE YOUR <span style="color: rgba(4, 33, 2, 1);"> EMOTIONS!</span></h1>
     </div>
-    <%= image_tag("logo dark.png", width: 100) %>
+    <%= image_tag("logo_light.png", width: 100) %>
   </div>
-  <br>
 
   <div class="login row justify-content-center">
-    <div class="col-10">
+    <div class="col-11">
       <h2>Log in</h2>
-
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
         data: {turbo: false}) do |f| %>
+        <div class="login-form">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
-                      input_html: { autocomplete: "email", class:"inputs" } %>
+                      input_html: { autocomplete: "email", class:"inputs test"} %>
           <%= f.input :password,
                       required: false,
-                      input_html: { autocomplete: "current-password", class:"inputs" } %>
+                      input_html: { autocomplete: "current-password", class:"inputs test" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
+        </div>
       <div class="devise-buttons">
         <div class="form-actions">
           <%= f.button :submit, "Log in" %>
@@ -31,10 +30,5 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-
-    </div>
-
-
   </div>
-
 </div>
