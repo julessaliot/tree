@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   get '/profile', to: 'users#profile'
+  get '/terms', to: 'pages#terms'
   get '/home', to: 'pages#home'
+
 
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create destroy]
