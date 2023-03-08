@@ -1,19 +1,45 @@
-<h1>Discover new songs from your friends:</h1>
+<div class="feed-container row justify-content-center">
 
-<div class="card">
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.content % >
+<div class="col-10">
+
+  <div class="opener">
+    <p class="opener-text">Discover new songs from your friends:</p>
+  </div>
+
+<%# *** need to be able to scroll through each post %>
+  <div class="cards-container">
+    <% @posts.each do |post| %>
       <% if post.spotify_track_id %>
+      <div class="card-category">
         <% track = RSpotify::Track.find(post.spotify_track_id) %>
-        <p><strong>Track:</strong> <%= track.name %></p>
-        <p><strong>Artist:</strong> <%= track.artists.first.name %></p>
-        <% if post.album_cover_url %>
-          <%= image_tag(post.album_cover_url, size: "100x100") %>
-        <% end %>
+        <div class="card-comment d-flex">
+          <%= image_tag "avatar-kurt.png", class: "avatar" %>
+          <div class="card-user-info">
+          <h6> <%= current_user.email %> </h6>
+           <%= post.content %>
+          </div>
+        </div>
+        <div class="d-flex">
+          <% if post.album_cover_url %>
+            <div class="card-album-cover">
+              <%= image_tag(post.album_cover_url, size: "100x100") %>
+            </div>
+          <% end %>
+          <div class="card-info">
+            <p><strong>Track:</strong> <%= track.name %></p>
+            <p><strong>Artist:</strong> <%= track.artists.first.name %></p>
+              <div class="icons ">
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-solid fa-play"></i>
+                <h6>OPEN <i class="fa-brands fa-spotify"></i></h6>
+              </div>
+          </div>
+        </div>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
 </div>
