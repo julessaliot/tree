@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
-  get '/tree', to: 'pages#tree_info'
 
 
   resources :users, only: %i[index show] do
