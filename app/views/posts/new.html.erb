@@ -1,7 +1,30 @@
-<h1>Hi Username!</h1>
-<h3>What song is on your mind?</h3>
+<div class="search-page">
+  <h1>Hi Username!</h1>
+  <h3>What song is on your mind?</h3>
 
-<%= simple_form_for @post do |f| %>
-  <%= f.input :tracks, input_html: {value: ""} %>
-  <%= f.submit "Song name", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for :search, url: new_post_path, method: "GET" do |f| %>
+    <%= f.input :tracks, input_html: {value: ""}, placeholder: "Song name" %>
+  <% end %>
+
+  <% if @tracks.present? %>
+    <% @tracks.each do |track| %>
+
+    <div class="track-card">
+      <div class="track-art">
+        <%= track.album.images[0]["url"] unless track.album.images[0]["url"].nil? %>
+      </div>
+
+      <div class="track-info">
+      <div class=""></div>
+        <div class="track-name"><strong><%= track.name %></strong></div>
+        <div class="track-artist-album"><%= track.artists.first.name %></div>,
+      </div>
+
+      <div class="song-select-icon">
+        <img src="/images/rss.jpg" alt="" />
+      </div>
+    </div>
+
+    <% end %>
+  <% end %>
+</div>

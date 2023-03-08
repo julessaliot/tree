@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    if params[:search].present?
+      @tracks = RSpotify::Track.search(params[:search][:tracks])
+    end
   end
 
   # def create
@@ -33,6 +36,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+
     track = RSpotify::Track.search(@post.content).first
     if track
       @post.spotify_track_id = track.id

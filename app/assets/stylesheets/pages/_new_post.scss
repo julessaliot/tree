@@ -1,0 +1,61 @@
+.track-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px;
+  padding: 5px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  }
+
+.track-name {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  color: #87DB1F;
+}
+
+.track-artist-album {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #BCBCBC;
+}
+
+
+
+.search-page {
+  background: #1B1B1B
+}
+
+.search-page h1 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #C2FC7A;
+}
+
+.search-page h3 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #BCBCBC;
+}
+
+input[type="text"] {
+  border: 1px solid #D9D9D9;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  background-color: #1B1B1B;
+}
