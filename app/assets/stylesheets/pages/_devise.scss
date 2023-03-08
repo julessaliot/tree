@@ -10,6 +10,12 @@
   background-size: cover;
 }
 
+.connect-page {
+  background-image: asset-url('background_login.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
 .tree-info {
   display: flex;
   flex-direction: row;
@@ -39,6 +45,12 @@
   background: rgba(4, 33, 2, 0.8);
   border-radius: 25px 25px 0px 0px;
 }
+
+.connect-popup {
+  background: rgba(4, 33, 2, 0.8);
+  border-radius: 25px 25px 0px 0px;
+}
+
 .login h2 {
   font-family: 'Open Sans';
   font-style: normal;
@@ -67,4 +79,17 @@
   box-sizing: border-box;
   border: 1px solid #FFFFFF;
   border-radius: 10px;
+}
+
+.connect {
+  background: #87DB1F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #042102;
+  text-decoration: none;
 }
