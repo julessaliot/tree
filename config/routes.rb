@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/spotify', as: 'spotify_auth'
   get '/auth/spotify/callback', to: 'users#spotify'
 
-  resources :posts, only: %i[index new create edit update destroy] do
+  resources :posts do
     resources :comments, only: %i[new create]
     resources :favorites, only: %i[create]
   end
