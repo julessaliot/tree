@@ -1,0 +1,19 @@
+<div class="comments-section>
+  <div class="user-call">
+    <%= current_user.username %>,
+    Leave your comment here:
+  </div>
+
+  <div class="all-comments">
+    <% @post.comments.each do |comment| %>
+      <%= comment.user.username %> said: <%= comment.content %>
+    <% end %>
+  </div>
+
+  <div class="new-comment">
+    <%= simple_form_for [@post, @comment] do |f| %>
+      <%= f.input :content, label: false, placeholder: "Write a comment", class: "input-comment" %>
+      <div class="button-comment"><%= f.button :submit, ">>" %></div>
+    <% end %>
+  </div>
+</div>

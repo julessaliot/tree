@@ -29,7 +29,9 @@
             </div>
               <div class="icons">
                 <i class="fa-regular fa-heart"></i>
-                <i class="fa-regular fa-comment"></i>
+                <%= link_to post_path(post) do %>
+                  <i class="fa-regular fa-comment"></i>
+                <% end %>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= post.id %>">
                   <i class="fa-solid fa-play"></i>
                 </button>
