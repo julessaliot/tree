@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get '/auth/spotify/callback', to: 'users#spotify'
 
   resources :posts, only: %i[index new create edit update destroy] do
+    collection do
+      get :search
+    end
+
     resources :comments, only: %i[new create]
     resources :favorites, only: %i[create]
   end
@@ -14,7 +18,6 @@ Rails.application.routes.draw do
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
-
 
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create destroy]
