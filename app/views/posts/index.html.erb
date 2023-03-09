@@ -1,4 +1,4 @@
-<div class="feed-container row justify-content-center">
+<div class="feed-container row justify-content-center" data-controller="spotify">
 <div class="col-10">
   <div class="opener">
     <p class="opener-text">Discover new songs from your friends:</p>
@@ -30,13 +30,16 @@
               <div class="icons">
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-comment"></i>
-                <i class="fa-solid fa-play"></i>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= post.id %>">
+                  <i class="fa-solid fa-play"></i>
+                </button>
                 <h6>OPEN<i class="fa-brands fa-spotify"></i></h6>
               </div>
           </div>
         </div>
       <% end %>
       </div>
+    <%= render "song_modal", post: post, track: track %>
     <% end %>
   </div>
 </div>
