@@ -1,12 +1,135 @@
-.center-logo {
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(9.43deg, #554E4E -9.63%, #87DB1F 156.6%);
+  background-color: rgba(27, 27, 27, 1);
+  //background: linear-gradient(9.43deg, #554E4E -9.63%, #87DB1F 156.6%);
+  transition: opacity 0.5s ease;
 }
 
 .img-logo {
   width: 144.74px;
   height: 157.96px;
+}
+
+.text-tree {
+  padding-left: 5vh;
+  padding-top: 18vh;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 153.68%;
+  text-align: justify;
+  text-transform: uppercase;
+  color: #C2FC7A;
+  text-shadow: 1px 1px 2px rgba(10, 81, 4, 0.8);
+}
+
+.text-tree h2 {
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 520;
+}
+
+.words-tree {
+  padding-left: 5vh;
+  padding-top: 5vh;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 136.18%;
+  text-align: justify;
+  text-transform: uppercase;
+  color: #87DB1F;
+  text-shadow: 1px 1px 2px rgba(10, 81, 4, 0.8);
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+}
+
+.first {
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 0.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.second {
+  white-space: nowrap;
+  margin: 0 auto;
+  opacity: 0;
+  letter-spacing: .15em;
+  animation: typing 0.5s steps(40, end) 1s, blink-caret .75s step-end infinite 1s, fade-in 1s ease-in 1s forwards;
+}
+
+.third {
+  white-space: nowrap;
+  margin: 0 auto;
+  opacity: 0;
+  letter-spacing: .15em;
+  animation: typing 0.5s steps(40, end) 2s, blink-caret .75s step-end infinite 2s, fade-in 1s ease-in 2s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(255, 255, 255); }
+}
+
+.words-tree h1 {
+  font-size: 30px;
+}
+
+.skip {
+  position: absolute;
+  padding-left: 48vh;
+  margin-top: -10px;
+  text-decoration: none;
+}
+
+.tree {
+  height: 100vh;
+  background-color: rgba(27, 27, 27, 1);
+  //background-image: linear-gradient(9.43deg, #554E4E -9.63%, #87DB1F 156.6%), asset-url('favicon.png');
+  background-size: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show-tree .tree::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('favicon.png');
+  background-size: cover;
+  width: 484px;
+  height: 494.66px;
+  margin-left: 65px;
+  opacity: 0.1;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-tree .tree {
+  display: block;
+  opacity: 1 !important;
 }

@@ -1,3 +1,42 @@
-<div class="center-logo">
-<%= image_tag "logo_light.png", class:"img-logo" %>
+<div class="logo">
+  <%= image_tag "logo_light.png", class:"img-logo" %>
 </div>
+
+<div class="tree hidden">
+  <div class="text-tree">
+    <h2>THE <span style="color: white;">SOCIAL</span></h2>
+    <h2>MEDIA APP</h2>
+    <h2>TO <span style="color: white;">SHARE</span></h2>
+    <h2>AND DISCOVER</h2>
+    <h2><span style="color: white;">MUSIC</span> WITH</h2>
+    <h2>YOUR NETWORK</h2>
+    <h2>OF FRIENDS</h2>
+  </div>
+  <div class="words-tree">
+    <h1 class="first"><strong>LISTEN. <span style="color: white;">SHARE.</span><strong></h1>
+    <h1 class="second"><strong>DISCOVER.<strong></h1>
+    <h1 class="third"><strong><span style="color: white;">CONNECT!</span><strong></h1>
+  </div>
+  <br>
+  <div class="skip">
+    <% if current_user.nil? %>
+      <%= link_to new_user_session_path do %>
+        <i class="fa-solid fa-angles-right" style="color: white"></i>
+      <% end %>
+    <% else %>
+      <%= link_to home_path do %>
+        <i class="fa-solid fa-angles-right" style="color: white"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  setTimeout(function() {
+    var logo = document.querySelector('.logo');
+    var tree = document.querySelector('.tree');
+    logo.classList.add('hidden');
+    tree.classList.remove("hidden");
+    tree.classList.add('show-tree');
+  }, 1500);
+</script>
