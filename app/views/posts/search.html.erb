@@ -1,0 +1,42 @@
+<div class="search-page">
+  <div class="search-part">
+    <h1>Hi Username!</h1>
+    <h3>What song is on your mind?</h3>
+    <%= simple_form_for :search, url: search_posts_path, method: "GET" do |f| %>
+      <%= f.input :tracks, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Song name" %>
+    <% end %>
+  </div>
+  <% if @tracks.present? %>
+
+    <% @tracks.each do |track| %>
+
+    <div class="tracks-list">
+
+      <div class="tracks d-flex">
+
+
+        <div class="track-art">
+          <% url = (track.album.images[2]["url"] unless track.album.images[2]["url"].nil?) %>
+          <%= image_tag "#{url}" %>
+        </div>
+
+        <div class="track-info">
+          <%= image_tag "icon-white.png", class:"logo-white" %>
+          <div class="writing">
+            <div class="track-name"><strong><%= track.name %></strong></div>
+            <div class="track-artist-album"><%= track.artists.first.name%>, <%= track.album.name %></div>
+          </div>
+        </div>
+
+        <div class="select-track">
+          <%= link_to new_post_path(track_id: track.id, track_image: track.album.images[2]["url"], track_name: track.name, track_artist: track.artists.first.name, track_album: track.album.name) do %>
+            <i class="fa-solid fa-music"></i>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+    <% end %>
+  <% end %>
+</div>
