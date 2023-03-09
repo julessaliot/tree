@@ -52,10 +52,14 @@ body {
 
 h6 {
   color: #87DB1F;
+  margin: 0;
 }
 
 .card-info {
   margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-album-cover img {
@@ -66,12 +70,12 @@ h6 {
 .card-comment {
   border-bottom: solid #87DB1F;
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .card-user-info {
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .card-info p {
@@ -79,7 +83,14 @@ h6 {
   font-size: 13px;
 }
 
+.track-name {
+  color: #87DB1F;
+}
+
 .icons {
   display: flex;
   justify-content: space-around;
+  font-size: 20px;
 }
+
+

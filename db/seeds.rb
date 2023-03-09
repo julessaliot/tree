@@ -20,6 +20,7 @@ def create_posts
   Post.create(content: "Just discovered this amazing track by #{track1.artists.first.name}! 🤘🎸",
               user_id: 1, spotify_track_id: track1.id,
               album_cover_url: track1.album.images.first["url"])
+
   Post.create(content: "Can't get enough of #{track2.name} by #{track2.artists.first.name}! 🤟🎤",
               user_id: 1, spotify_track_id: track2.id,
               album_cover_url: track2.album.images.first["url"])
