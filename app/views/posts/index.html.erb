@@ -29,7 +29,9 @@
             <p><strong>Track:</strong> <%= track.name %></p>
             <p><strong>Artist:</strong> <%= track.artists.first.name %></p>
               <div class="icons ">
-                <i class="fa-regular fa-comment"></i>
+                <%= link_to post_path(post) do %>
+                  <i class="fa-regular fa-comment"></i>
+                <% end %>
                 <i class="fa-solid fa-play"></i>
                 <h6>OPEN <i class="fa-brands fa-spotify"></i></h6>
               </div>
