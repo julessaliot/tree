@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+
     resources :comments, only: %i[new create]
     resources :favorites, only: %i[create]
   end
