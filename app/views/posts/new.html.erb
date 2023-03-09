@@ -1,30 +1,33 @@
 <div class="search-page">
-  <h1>Hi Username!</h1>
-  <h3>What song is on your mind?</h3>
+  <div class="instructions">
+    <h1>Username</h1>
+    <h3>What is the caption for this song?</h3>
+  </div>
 
-  <%= simple_form_for :search, url: new_post_path, method: "GET" do |f| %>
-    <%= f.input :tracks, input_html: {value: ""}, placeholder: "Song name" %>
-  <% end %>
-
-  <% if @tracks.present? %>
-    <% @tracks.each do |track| %>
-
-    <div class="track-card">
+  <div class="post-components">
+    <div class="tracks d-flex">
       <div class="track-art">
-        <%= track.album.images[0]["url"] unless track.album.images[0]["url"].nil? %>
+        <%= image_tag "#{params[:track_image]}" %>
       </div>
-
       <div class="track-info">
-      <div class=""></div>
-        <div class="track-name"><strong><%= track.name %></strong></div>
-        <div class="track-artist-album"><%= track.artists.first.name %></div>,
-      </div>
-
-      <div class="song-select-icon">
-        <img src="/images/rss.jpg" alt="" />
+        <%= image_tag "icon-white.png", class:"logo-white" %>
+        <div class="writing">
+          <div class="track-name"><strong><%= params[:track_name] %></strong></div>
+          <div class="track-artist-album"><%= params[:track_artist] %>, <%= params[:track_album] %></div>
+        </div>
       </div>
     </div>
-
+    <br>
+    <%= simple_form_for @post do |f| %>
+      <%= f.input :content, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Caption" %>
+      <%= f.input_field :track_id, as: :hidden, value: params[:track_id] %>
+      <%= f.input_field :track_image, as: :hidden, value: params[:track_image] %>
+      <br>
+      <div class="post-buttons">
+      <%= f.submit "   Post   ", class: "post-button" %>
+      <%= f.submit "   Edit   ", class: "edit-button" %>
+      <%= f.submit "   Delete   ", class: "delete-button" %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 </div>

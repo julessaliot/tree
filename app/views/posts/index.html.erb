@@ -1,12 +1,8 @@
-<div class="feed-container row justify-content-center">
-
+<div class="feed-container row justify-content-center" data-controller="spotify">
 <div class="col-10">
-
   <div class="opener">
     <p class="opener-text">Discover new songs from your friends:</p>
   </div>
-
-<%# *** need to be able to scroll through each post %>
   <div class="cards-container">
     <% @posts.each do |post| %>
       <% if post.spotify_track_id %>
@@ -15,33 +11,38 @@
         <div class="card-comment d-flex">
           <%= image_tag "avatar-kurt.png", class: "avatar" %>
           <div class="card-user-info">
-          <h6> <%= current_user.email %> </h6>
-           <%= post.content %>
+          <h6><strong><%= current_user.email %></strong></h6>
+          <%= post.content %>
           </div>
         </div>
         <div class="d-flex">
           <% if post.album_cover_url %>
             <div class="card-album-cover">
-              <%= image_tag(post.album_cover_url, size: "100x100") %>
+              <%= image_tag(post.album_cover_url) %>
             </div>
           <% end %>
           <div class="card-info">
-            <p><strong>Track:</strong> <%= track.name %></p>
-            <p><strong>Artist:</strong> <%= track.artists.first.name %></p>
-              <div class="icons ">
+            <div>
+              <p class="track-name"><strong><%= track.name %></strong></p>
+              <p><%= track.artists.first.name %></p>
+              <p><%= track.album.name %></p>
+            </div>
+              <div class="icons">
+                <i class="fa-regular fa-heart"></i>
                 <%= link_to post_path(post) do %>
                   <i class="fa-regular fa-comment"></i>
                 <% end %>
-                <i class="fa-solid fa-play"></i>
-                <h6>OPEN <i class="fa-brands fa-spotify"></i></h6>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= post.id %>">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <h6><i class="fa-brands fa-spotify"></i></h6>
               </div>
           </div>
         </div>
       <% end %>
       </div>
+    <%= render "song_modal", post: post, track: track %>
     <% end %>
   </div>
-
 </div>
-
 </div>
