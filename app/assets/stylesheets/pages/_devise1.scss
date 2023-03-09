@@ -1,24 +1,17 @@
-.login-page {
-  background-image: asset-url('back.png');
-  background-position: center;
-  background-size: cover;
-}
-
 .signup-page {
   background-image: asset-url('back.png');
   background-position: center;
   background-size: cover;
 }
 
-.tree-info {
+.tree-info-signup {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px;
   align-items: flex-start;
 }
 
-.tree-info h1 {
+.tree-info-signup h1 {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
@@ -26,23 +19,24 @@
   line-height: 135%;
   text-align: justify;
   text-transform: uppercase;
-  color: rgba(194, 252, 122, 1);
-  text-shadow: 1px 1px 2px rgba(10, 81, 4, 0.8);
+  color:transparent;
 }
 
 img{
   height: fit-content;
   position: relative;
+  margin-right: 30px;
+  margin-top: 30px;
 }
 
 .devise-info-text {
   padding-right: 40px;
 }
 
-.login {
+.signup {
   background: rgba(4, 33, 2, 0.8);
   border-radius: 30px 30px 0px 0px;
-  height: 335px;
+  height: 472px;
   width: 56.2vh;
   margin-left: 0px;
 }
@@ -79,56 +73,29 @@ img{
   color: #C2FC7A;
 }
 
-.form-actions {
+.form-actions1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.login-button{
+.signup-button1{
   color: rgba(27, 27, 27, 1);
-  padding: 15px 39px;
+  padding: 15px 105px;
   border-radius: 50px;
   background: #87DB1F;
   transition: background 0.3s ease;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 22px;
   letter-spacing: -0.005em;
+  margin-top: 16px;
 }
 
 
-.login-button:hover {
+.signup-button1:hover {
   background: #C2FC7A;
   color: rgba(27, 27, 27, 1);
-}
-
-.signup-button{
-  color: rgba(135, 219, 31, 1);
-  padding: 20px 39px;
-  border-radius: 50px;
-  background: transparent;
-  border: solid 1px #87DB1F;
-  transition: background 0.3s ease;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: -0.005em;
-  text-decoration: none;
-}
-
-
-.signup-button:hover {
-  background: transparent;
-  color: rgb(165, 224, 92);
-  border: solid 1px rgb(165, 224, 92);
-}
-
-.signup-button a {
-  text-decoration: none;
-  color:#C2FC7A;
-  align-items: center;
 }
 
 .signup h2 {
