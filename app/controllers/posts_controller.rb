@@ -7,6 +7,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def search
+    @post = Post.new
+    if params[:search].present?
+      @tracks = RSpotify::Track.search(params[:search][:tracks])
+    end
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user = current_user
@@ -20,31 +27,20 @@ class PostsController < ApplicationController
     end
   end
 
-  def search
-    @post = Post.new
-    if params[:search].present?
-      @tracks = RSpotify::Track.search(params[:search][:tracks])
-    end
-  end
-
 # Tahlia's create method:
 
-  def create
-    @post = Post.new(post_params)
-    @post.user = current_user
+  #   track = RSpotify::Track.search(@post.content).first
+  #   if track
+  #     @post.spotify_track_id = track.id
+  #     @post.album_cover_url = track.album.images.first["url"]
+  #   end
+  #   if @post.save
+  #     redirect_to posts_path
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
 
-    track = RSpotify::Track.search(@post.content).first
-    if track
-      @post.spotify_track_id = track.id
-      @post.album_cover_url = track.album.images.first["url"]
-    end
-    if @post.save
-      redirect_to posts_path
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-  
   def edit
     @post = Post.find(params[:id])
   end

@@ -18,7 +18,7 @@
         <div class="d-flex">
           <% if post.album_cover_url %>
             <div class="card-album-cover">
-              <%= image_tag(post.album_cover_url, size: "100x100") %>
+              <%= image_tag(post.album_cover_url) %>
             </div>
           <% end %>
           <div class="card-info">
@@ -33,7 +33,7 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= post.id %>">
                   <i class="fa-solid fa-play"></i>
                 </button>
-                <h6>OPEN<i class="fa-brands fa-spotify"></i></h6>
+                <h6><i class="fa-brands fa-spotify"></i></h6>
               </div>
           </div>
         </div>
