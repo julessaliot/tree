@@ -1,23 +1,23 @@
 .new-comment {
-  position: relative;
+  //position: relative;
 }
 
 .button-comment {
   background: #87DB1F;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 18px;
-  height: 41px;
-  margin-left: 208px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 6vh;
 }
 
 #comment_content {
   box-sizing: border-box;
-  position: absolute;
   width: 252px;
   height: 40px;
   border: 1px solid #C1C1C1;
   background-color: transparent;
-  border-radius: 18px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 #comment_content.form-control{
@@ -47,10 +47,15 @@
 }
 
 .show-page {
-  height: 100vh;
-  margin: 196px 24px;
+  justify-content: center;
+  height: 60vh;
+  flex-direction: column;
+  align-items: center;
 }
 
+.user-info {
+  margin-right: 15vh;
+}
 .user-call {
   font-family: 'Open Sans';
   font-style: normal;

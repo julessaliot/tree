@@ -1,22 +1,3 @@
-<script type='text/javascript'>
-
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
-
-</script>
-
-
 <div class="feed-container row justify-content-center" data-controller="spotify">
 <div class="col-10">
   <div class="opener">
@@ -67,3 +48,22 @@
   </div>
 </div>
 </div>
+
+
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>

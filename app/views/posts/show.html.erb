@@ -1,4 +1,3 @@
-<head>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function(){
@@ -7,21 +6,20 @@
       });
     });
   </script>
-</head>
 
-<body>
 
-  <div class="show-page">
-    <div class="user-call">
-      <%= current_user.username %>,
+  <div class="show-page d-flex">
+    <div class="user-info">
+      <div class="user-call">
+        <%= current_user.username %>,
+      </div>
+      <div class="leave-comment">
+        Leave your comment here:
+      </div>
     </div>
-    <div class="leave-comment">
-      Leave your comment here:
-    </div>
-
     <div class="comments-section">
 
-      <div class="all-comments">
+      <div class="all-comments mb-3">
         <div class="commented-ones" id="toggle-btn" data-toggle="collapse" data-target="#toggle-example">
           See all comments
         </div>
@@ -34,11 +32,13 @@
 
       <div class="new-comment">
         <%= simple_form_for [@post, @comment] do |f| %>
-          <%= f.input :content, label: false, placeholder: "Write a comment", class: "input-comment" %>
-          <%= f.button :submit, ">>",class: "button-comment" %>
+        <div class="d-flex">
+          <%= f.input :content, label: false, placeholder: "Write a comment" %>
+          <%= f.button :submit, ">>", class: "button-comment" %>
+
+        </div>
         <% end %>
       </div>
 
     </div>
   </div>
-</body>

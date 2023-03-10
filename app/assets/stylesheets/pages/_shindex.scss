@@ -1,7 +1,7 @@
 
 .feed-container {
-  height: 100vh;
-  margin: 0 24px;
+  // height: 100vh;
+  //margin: 0 24px;
 }
 
 body {
@@ -13,6 +13,8 @@ body {
   height: 19px;
   left: 24px;
   top: 79px;
+  margin-top: 20px;
+  margin-left: 10px;
 
   color: #87DB1F;
   font-family: 'Open Sans', sans-serif;
@@ -23,7 +25,6 @@ body {
 }
 
 .opener-text {
-  margin: 100px 0px 5px -33px;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
