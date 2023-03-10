@@ -1,9 +1,16 @@
 <div class="search-page">
+  <div class="navbar">
+    <div class="icons-nav">
+      <%= image_tag "favicon.png", class: "navbar-logo" %>
+
+      <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+    </div>
+  </div>
   <div class="search-part">
     <h1>Hi Username!</h1>
     <h3>What song is on your mind?</h3>
     <%= simple_form_for :search, url: search_posts_path, method: "GET" do |f| %>
-      <%= f.input :tracks, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Song name" %>
+      <%= f.input :tracks, input_html: {value: "", style: "color: white; background-color: #1B1B1B; height: 50px;"}, label: false, placeholder: "Song name" %>
     <% end %>
   </div>
   <% if @tracks.present? %>
@@ -39,4 +46,29 @@
     </div>
     <% end %>
   <% end %>
+  <div class="devise-buttons">
+    <div class="form-actions1">
+      <div class="signup-button1">
+        <%= link_to "", style:"font-weight: 600; font-size: 20px;" %>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="footerbar">
+  <div class="footer-img">
+    <%= image_tag "footer bar.png" %>
+  </div>
+</div>
+  <div class="footer-buttons">
+      <%= link_to posts_path do %>
+        <div class="home-button">
+        </div>
+      <% end %>
+      <%= link_to search_posts_path do %>
+        <div class="post-button1">
+        </div>
+      <% end %>
+      <%= link_to "", href="#" %>
+        <div class="chat-button">
+        </div>
+  </div>

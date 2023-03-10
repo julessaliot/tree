@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   get '/home', to: 'pages#home'
 
+  get '/test', to: 'pages#test_footer'
+
+  get '/test1', to: 'pages#test_navbar'
+
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create destroy]
   end

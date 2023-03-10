@@ -4,6 +4,7 @@
   align-items: center;
   height: 100vh;
   background-color: rgba(27, 27, 27, 1);
+  //background-image: url("landing.png");background-color: rgba(27, 27, 27, 1);
   //background: linear-gradient(9.43deg, #554E4E -9.63%, #87DB1F 156.6%);
   transition: opacity 0.5s ease;
 }
@@ -16,7 +17,7 @@
 .text-tree {
   padding-left: 5vh;
   padding-top: 18vh;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   line-height: 153.68%;
@@ -35,7 +36,7 @@
 .words-tree {
   padding-left: 5vh;
   padding-top: 5vh;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   line-height: 136.18%;
@@ -91,6 +92,7 @@
 }
 
 .words-tree h1 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
 }
 

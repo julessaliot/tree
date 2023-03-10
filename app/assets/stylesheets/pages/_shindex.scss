@@ -1,7 +1,7 @@
+
 .feed-container {
   height: 100vh;
   margin: 0 24px;
-  padding-top: 30px;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   margin-bottom: 20px;
 
   color: #87DB1F;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -23,9 +23,8 @@ body {
 }
 
 .opener-text {
-  margin: 15px 0px 5px -33px;
+  margin: 100px 0px 5px -33px;
   font-size: 15px;
-  padding-top: 15px;
 }
 
 .cards-container {
@@ -50,45 +49,137 @@ body {
   color: #FFFFFF;
 }
 
-h6 {
+.card-category h6 {
   color: #87DB1F;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
 }
 
 .card-info {
-  margin-left: 50px;
+  margin-left: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.info-band {
+  margin:5px;
+}
+
 .card-album-cover img {
-  height: 100%;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
 }
 
 .card-comment {
-  border-bottom: solid #87DB1F;
+  border-bottom: solid 1px #87DB1F;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .card-user-info {
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .card-info p {
   margin: 0px;
   font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .track-name {
   color: #87DB1F;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  position: fixed;
+  background-color: linear   #1B1B1B;
+}
+
+.navbar-logo {
+  height: 34.14px;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+
+.navbar h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: white;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.navbar-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-top: 24px;
+  margin-right: 24px;
+}
+
+.footerbar {
+  display: flex;
+  justify-content: center;
+ //position: fixed;
+}
+
+.footerbar img {
+  background-repeat: none;
+  height: 95.5px;
+  margin-top: -176px;
+  margin-right: 0;
+  position:relative
+
+}
+
+.footer-buttons{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.home-button {
+  padding: 31px;
+  background-color: transparent;
+  border-radius: 50px;
+  position: absolute;
+  margin-top: -129px;
+  margin-left: -118px;
+}
+
+.post-button1 {
+  padding: 42px;
+  background-color: transparent;
+  border-radius: 50px;
+  position: absolute;
+  margin-top: -141px;
+  margin-left:-42px;
+}
+
+.chat-button {
+  padding: 31px;
+  background-color: transparent;
+  border-radius: 50px;
+  position: absolute;
+  margin-left: 174px;
+  margin-top: -129px;
 }
