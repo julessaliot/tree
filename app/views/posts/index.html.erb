@@ -1,4 +1,9 @@
 <div class="feed-container row justify-content-center" data-controller="spotify">
+<div class="navbar">
+  <%= image_tag "favicon.png", class: "navbar-logo" %>
+
+  <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+</div>
 <div class="col-10">
   <div class="opener">
     <p class="opener-text">Discover new songs from your friends:</p>
@@ -11,8 +16,10 @@
         <div class="card-comment d-flex">
           <%= image_tag "avatar-kurt.png", class: "avatar" %>
           <div class="card-user-info">
-          <h6><strong><%= current_user.email %></strong></h6>
-          <%= post.content %>
+            <h6><strong><%= current_user.email %></strong></h6>
+            <div class="post-content">
+              <%= post.content %>
+            </div>
           </div>
         </div>
         <div class="d-flex">
@@ -22,7 +29,7 @@
             </div>
           <% end %>
           <div class="card-info">
-            <div>
+            <div class="info-band">
               <p class="track-name"><strong><%= track.name %></strong></p>
               <p><%= track.artists.first.name %></p>
               <p><%= track.album.name %></p>
@@ -46,3 +53,22 @@
   </div>
 </div>
 </div>
+<div class="footerbar">
+  <div class="footer-img">
+    <%= image_tag "footer bar.png" %>
+  </div>
+</div>
+  <div class="footer-buttons">
+      <%= link_to posts_path do %>
+        <div class="home-button">
+        </div>
+      <% end %>
+      <%= link_to search_posts_path do %>
+        <div class="post-button1">
+        </div>
+      <% end %>
+      <%= link_to "", href="#" %>
+        <div class="chat-button">
+        </div>
+  </div>
+
