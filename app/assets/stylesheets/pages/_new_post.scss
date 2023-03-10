@@ -1,25 +1,4 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0;
-}
 
-.navbar-logo {
-  height: 34.14px;
-  margin-top: 24px;
-  margin-left: 24px;
-}
-
-.navbar-avatar {
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
-  object-fit: cover;
-  margin-top: 24px;
-  margin-right: 24px;
-}
 .tracks-list {
   display: flex;
   flex-direction: row;
@@ -197,54 +176,4 @@ input[type="text"] {
 
 .fa-music {
   color: #87DB1F;
-}
-
-
-.footerbar {
-  display: flex;
-  justify-content: center;
- //position: fixed;
-}
-
-.footerbar img {
-  background-repeat: none;
-  height: 95.5px;
-  margin-top: -176px;
-  margin-right: 0;
-  position:relative
-
-}
-
-.footer-buttons{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-}
-
-.home-button {
-  padding: 31px;
-  background-color: transparent;
-  border-radius: 50px;
-  position: absolute;
-  margin-top: -129px;
-  margin-left: -118px;
-}
-
-.post-button1 {
-  padding: 42px;
-  background-color: transparent;
-  border-radius: 50px;
-  position: absolute;
-  margin-top: -141px;
-  margin-left:-42px;
-}
-
-.chat-button {
-  padding: 31px;
-  background-color: transparent;
-  border-radius: 50px;
-  position: absolute;
-  margin-left: 174px;
-  margin-top: -129px;
 }
