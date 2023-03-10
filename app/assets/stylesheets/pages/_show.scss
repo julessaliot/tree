@@ -19,32 +19,6 @@
   position: absolute;
 }
 
-.show-page {
-  height: 100vh;
-  margin: 196px 24px;
-}
-
-.card-style {
-  padding: 15px;
-  background: rgba(52, 52, 52, 0.7);
-  width: 320px;
-  left: 24px;
-  top: 154px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  color: #FFFFFF;
-}
-
-.card-whole{
-  padding-top: 10px;
-  left: 24px;
-  top: 170px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .card-comments {
   border-bottom: solid #87DB1F;
   margin-bottom: 10px;
@@ -57,5 +31,19 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
+  color: #C2FC7A;
+}
+
+.show-page {
+  height: 100vh;
+  margin: 196px 24px;
+}
+
+.user-call {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
   color: #C2FC7A;
 }

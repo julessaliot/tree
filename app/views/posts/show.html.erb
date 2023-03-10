@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div class="show-page">
     <div class="user-call">
       <%= current_user.username %>,
@@ -18,62 +19,17 @@
       Leave your comment here:
     </div>
 
-  <div class="card-whole">
-    <% if @post.spotify_track_id %>
-      <div class="card-style">
-        <% track = RSpotify::Track.find(@post.spotify_track_id) %>
-
-        <div class="card-comments d-flex">
-          <%= image_tag "avatar-kurt.png", class: "avatar" %>
-          <div class="card-user-info">
-            <h6><strong><%= current_user.email %></strong></h6>
-            <%= @post.content %>
-          </div>
-        </div>
-
-        <div class="d-flex">
-          <% if @post.album_cover_url %>
-            <div class="card-album-cover">
-              <%= image_tag(@post.album_cover_url) %>
-            </div>
-          <% end %>
-
-          <div class="card-info">
-            <div>
-              <p class="track-name"><strong><%= track.name %></strong></p>
-              <p><%= track.artists.first.name %></p>
-              <p><%= track.album.name %></p>
-            </div>
-
-            <div class="icons">
-              <i class="fa-regular fa-heart"></i>
-              <%= link_to post_path(@post) do %>
-                <i class="fa-regular fa-comment"></i>
-              <% end %>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<%= @post.id %>">
-                <i class="fa-solid fa-play"></i>
-              </button>
-              <h6><i class="fa-brands fa-spotify"></i></h6>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    <% end %>
-
-    <%= render "song_modal", post: @post, track: track %>
-
     <div class="comments-section">
 
       <div class="all-comments">
         <div class="commented-ones" id="toggle-btn" data-toggle="collapse" data-target="#toggle-example">
           See all comments
         </div>
-        <% @post.comments.each do |comment| %>
-          <div id="toggle-example" class="collapse in">
-            <%= comment.user.username %> said: <%= comment.content %>
-          </div>
-        <% end %>
+        <div id="toggle-example" class="collapse">
+        <ul><% @post.comments.each do |comment| %>
+            <li><%= comment.user.username %> said: <%= comment.content %></li>
+        <% end %></ul>
+         </div>
       </div>
 
       <div class="new-comment">
@@ -84,6 +40,5 @@
       </div>
 
     </div>
-
   </div>
 </body>
