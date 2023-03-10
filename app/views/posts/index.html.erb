@@ -17,7 +17,7 @@
 </script>
 
 
-<div class="feed-container justify-content-center" data-controller="spotify">
+<div class="feed-container row justify-content-center" data-controller="spotify">
 <div class="navbar">
   <%= image_tag "favicon.png", class: "navbar-logo" %>
 
@@ -28,7 +28,7 @@
     <p class="opener-text">Discover new songs from your friends:</p>
   </div>
   <div class="cards-container">
-    <% @posts.each do |post| %>
+    <% @posts.reverse_each do |post| %>
       <% if post.spotify_track_id %>
       <div class="card-category">
         <% track = RSpotify::Track.find(post.spotify_track_id) %>

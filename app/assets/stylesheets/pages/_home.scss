@@ -30,10 +30,6 @@
 
 .button-spotify-connect {
   margin: 10px 10px 10px 10px;
-  background: #87DB1F;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  width: 50%;
   justify-content: space-around;
 }
 
@@ -49,4 +45,21 @@
 .yessir {
   background: rgba(52, 52, 52, 0.7);
   border-radius: 10px;
+}
+
+.continue-button {
+  margin-top: 15px;
+  text-decoration: none;
+  background: #87DB1F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #042102;
+  width: 150px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
 }
