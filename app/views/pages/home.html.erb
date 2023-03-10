@@ -6,18 +6,21 @@
 
   <div class="yessir">
     <div class="connect-spotify">
-      <h2>Connect to spotify</h2>
-      <div class="connect-info">
-      <div class="status-connect"><%= user_signed_in? ? "Signed into Tree with:  #{current_user.email}" : "Not signed in" %></div>
+      <div class="status-connect"><%= user_signed_in? ? "Signed in with:  #{current_user.email}" : "Not signed in" %></div>
     </div>
   </div>
 
   <div class="button-spotify-connect d-flex">
     <% if user_signed_in? && current_user.provider.nil? %>
       <%= render "spotify_connect" %>
-    <% end %>
   </div>
+      <% else %>
+        <%= link_to "Continue", search_posts_path, class:"continue-button"%>
+    <% end %>
+
 
 </div>
 
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:""%>
+<div class="button-spotify-connect d-flex">
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"continue-button"%>
+</div>
