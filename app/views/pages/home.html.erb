@@ -1,12 +1,23 @@
-<h1>Tree</h1>
+<div class="connect-page">
 
-<%= user_signed_in? ? current_user.email : "Not signed in" %>
-<br>
-<%= link_to "Sign up", new_user_registration_path %> or
-<%= link_to "Log in", new_user_session_path %> or
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
-<br>
+  <div class="logo-connect">
+    <%= image_tag("logo_light.png", width: 120) %>
+  </div>
 
-<% if user_signed_in? && current_user.provider.nil? %>
-  <%= render "spotify_connect" %>
-<% end %>
+  <div class="yessir">
+    <div class="connect-spotify">
+      <h2>Connect to spotify</h2>
+      <div class="connect-info">
+      <div class="status-connect"><%= user_signed_in? ? "Signed into Tree with:  #{current_user.email}" : "Not signed in" %></div>
+    </div>
+  </div>
+
+  <div class="button-spotify-connect d-flex">
+    <% if user_signed_in? && current_user.provider.nil? %>
+      <%= render "spotify_connect" %>
+    <% end %>
+  </div>
+
+</div>
+
+<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:""%>
