@@ -15,7 +15,7 @@
     <div class="user-call">
       <%= current_user.username %>,
     </div>
-    <div>
+    <div class="leave-comment">
       Leave your comment here:
     </div>
 
@@ -26,8 +26,8 @@
           See all comments
         </div>
         <div id="toggle-example" class="collapse">
-        <ul><% @post.comments.each do |comment| %>
-            <li><%= comment.user.username %> said: <%= comment.content %></li>
+        <ul class="ul-comment"><% @post.comments.each do |comment| %>
+            <li><span class="username-say"><%= comment.user.username %> said:</span> <span class="said"><%= comment.content %></span></li>
         <% end %></ul>
          </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="new-comment">
         <%= simple_form_for [@post, @comment] do |f| %>
           <%= f.input :content, label: false, placeholder: "Write a comment", class: "input-comment" %>
-          <div class="button-comment"><%= f.button :submit, ">>" %></div>
+          <%= f.button :submit, ">>",class: "button-comment" %>
         <% end %>
       </div>
 
