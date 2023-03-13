@@ -1,0 +1,27 @@
+<div class="profile-contain d-flex">
+
+  <div class="edit-profile">
+
+      <%= simple_form_for(article) do |f| %>
+      <div class="profile-info d-flex">
+        <div class="profile-pic"><%= f.input :photo, as: :file %></div>
+        <h2 class="profile-username">@<%= @user.username %></h2>
+        <h3 class="profile-email"><%=  @user.email %></h3>
+      </div>
+
+    <h2 class="profile-bio">About me:</h2>
+      <p><%= f.input :description, as: :text %></p>
+
+    <h2 class="profile-interests">Interests:</h2>
+      <ul>
+        <li><%= f.input :description, as: :text %></li>
+      </ul>
+       <% end %>
+
+    <div class="actions-btn">
+      <h3>Edit<%= form.submit %></h3>
+    </div>
+    <% end %>
+
+  </div>
+</div>
