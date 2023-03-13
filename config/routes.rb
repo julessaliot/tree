@@ -11,21 +11,23 @@ Rails.application.routes.draw do
     end
 
     resources :comments, only: %i[new create]
-    resources :favorites, only: %i[create] 
+    resources :favorites, only: %i[create]
   end
 
   resources :favorites, only: [:destroy]
 
   get '/profile', to: 'users#profile'
+  post '/profile/edit', to: 'users/profile#edit'
+  
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
 
-  get '/test', to: 'pages#test_footer'
 
-  get '/test1', to: 'pages#test_navbar'
+
 
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[new index update edit create destroy]
+    get 'profile', on: :member #user
   end
 end

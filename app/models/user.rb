@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # has_many :favorites, through: :posts
   # has_many :comments, through: :posts
   has_many :favorites, through: :posts, dependent: :destroy
+  has_one_attached :photo
 
   def self.from_omniauth(auth)
     if User.find_by(email: auth.info.email)
