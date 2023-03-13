@@ -26,6 +26,6 @@ Rails.application.routes.draw do
   get '/test1', to: 'pages#test_navbar'
 
   resources :users, only: %i[index show] do
-    resources :friendships, only: %i[create destroy]
+    resources :friendships, only: %i[new index update edit create destroy]
   end
 end
