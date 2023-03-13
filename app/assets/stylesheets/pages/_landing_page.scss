@@ -94,6 +94,7 @@
 .words-tree h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
+  padding: 5px;
 }
 
 .skip {
@@ -101,6 +102,13 @@
   padding-left: 48vh;
   margin-top: -10px;
   text-decoration: none;
+  display: contents;
+}
+
+.fa-solid1 {
+  font-weight: 900;
+  font-size: 36px;
+  margin-left: 47px;
 }
 
 .tree {

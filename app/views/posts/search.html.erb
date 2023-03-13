@@ -1,6 +1,7 @@
 <div class="search-page">
 
   <div class="search-part">
+
     <h1>Hi Username!</h1>
     <h3>What song is on your mind?</h3>
     <%= simple_form_for :search, url: search_posts_path, method: "GET" do |f| %>
@@ -28,12 +29,12 @@
             <div class="track-artist-album"><%= track.artists.first.name%>, <%= track.album.name %></div>
           </div>
         </div>
-
         <div class="select-track">
           <%= link_to new_post_path(track_id: track.id, track_image: track.album.images[2]["url"], track_name: track.name, track_artist: track.artists.first.name, track_album: track.album.name) do %>
             <i class="fa-solid fa-plus "></i>
           <% end %>
         </div>
+
 
       </div>
 
