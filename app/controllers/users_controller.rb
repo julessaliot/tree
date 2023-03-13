@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.where('id != ?', current_user.id)
+    @all_friends = User.confirmed_friends(current_user)
+    @pending_requests = User.pending_requests(current_user)
+    @sent_requests = User.sent_requests(current_user)
   end
 
   def show

@@ -1,5 +1,20 @@
-<div class="navbar">
-  <%= image_tag "favicon.png", class: "navbar-logo" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= image_tag "favicon.png", class: "navbar-logo" %>
 
-  <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "My Planted songs", favorites_path, class: "dropdown-item nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

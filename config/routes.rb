@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :favorites, only: %i[create]
   end
 
-  resources :favorites, only: [:destroy]
+  resources :favorites, only: [:index, :destroy]
 
   get '/profile', to: 'users#profile'
   post '/profile/edit', to: 'users/profile#edit'

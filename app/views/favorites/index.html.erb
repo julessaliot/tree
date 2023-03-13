@@ -1,0 +1,18 @@
+<div class="favorites-list">
+  <h1>Planted Songs</h1>
+  <% @favorites.each do |favorite| %>
+    <% track = RSpotify::Track.find(favorite.post.spotify_track_id) %>
+    <div class="favorites d-flex">
+      <div class="favorite-track-art">
+        <%= image_tag favorite.post.album_cover_url %>
+      </div>
+      <div class="favorite-track-info">
+        <%= image_tag "icon-white.png", class:"logo-white" %>
+        <div class="favorite-writing">
+          <div class="favorite-track-name"><strong><%= track.name %></strong></div>
+          <div class="favorite-track-artist-album"><%= track.artists.first.name %>, <%= track.album.name %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
