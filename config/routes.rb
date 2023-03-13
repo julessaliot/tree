@@ -11,10 +11,10 @@ Rails.application.routes.draw do
     end
 
     resources :comments, only: %i[new create]
-    resources :favorites, only: %i[create] 
+    resources :favorites, only: %i[create]
   end
 
-  resources :favorites, only: [:destroy]
+  resources :favorites, only: [:index, :destroy]
 
   get '/profile', to: 'users#profile'
   get '/terms', to: 'pages#terms'
