@@ -7,38 +7,112 @@
     });
   </script>
 
+<script type='text/javascript'>
 
-  <div class="show-page d-flex">
-    <div class="user-info">
-      <div class="user-call">
-        <%= current_user.username %>,
-      </div>
-      <div class="leave-comment">
-        Leave your comment here:
-      </div>
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
+
+<br>
+<br>
+<div class="show-page d-flex text-start">
+  <div class="user-info">
+    <div class="user-call">
+      <%= current_user.username %>,
     </div>
-    <div class="comments-section">
+    <div class="leave-comment">
+      Leave your comment here:
+    </div>
+  </div>
 
-      <div class="all-comments mb-3">
-        <div class="commented-ones" id="toggle-btn" data-toggle="collapse" data-target="#toggle-example">
-          See all comments
+  <div class="cards-container">
+    <div class="card-category">
+      <% if @post.spotify_track_id %>
+        <% track = RSpotify::Track.find(@post.spotify_track_id) %>
+
+        <div class="card-comment d-flex">
+          <%= image_tag "avatar-kurt.png", class: "avatar" %>
+          <div class="card-user-info">
+            <h6><strong><%= current_user.email %></strong></h6>
+            <div class="post-content">
+              <%= @post.content %>
+            </div>
+          </div>
         </div>
-        <div id="toggle-example" class="collapse">
-        <ul class="ul-comment"><% @post.comments.each do |comment| %>
-            <li><span class="username-say"><%= comment.user.username %> said:</span> <span class="said"><%= comment.content %></span></li>
-        <% end %></ul>
-         </div>
-      </div>
 
-      <div class="new-comment">
-        <%= simple_form_for [@post, @comment] do |f| %>
         <div class="d-flex">
-          <%= f.input :content, label: false, placeholder: "Write a comment" %>
-          <%= f.button :submit, ">>", class: "button-comment" %>
 
+          <% if @post.album_cover_url %>
+          <div class="card-album-cover">
+            <%= image_tag(@post.album_cover_url) %>
+          </div>
+          <% end %>
+
+          <div class="card-info">
+            <div class="info-band">
+              <p class="track-name"><strong><%= track.name %></strong></p>
+              <p><%= track.artists.first.name %></p>
+              <p><%= track.album.name %></p>
+            </div>
+
+            <div class="icons">
+              <i class="fa-regular fa-heart"></i>
+              <%= link_to post_path(@post) do %>
+                <i class="fa-regular fa-comment"></i>
+              <% end %>
+              <button type="button" class="btn btn-primary-transparent" data-bs-toggle="modal" data-bs-target="#modal-<%= @post.id %>">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <i class="fa-brands fa-spotify"></i>
+            </div>
+
+          </div>
         </div>
-        <% end %>
+
+      <% end %>
+
+    <%= render "song_modal", post: @post, track: track %>
+
+
+
+
+      <div class="comments-section">
+
+        <div class="all-comments mb-3">
+          <div class="commented-ones" id="toggle-btn" data-toggle="collapse" data-target="#toggle-example">
+            See all comments
+          </div>
+          <div id="toggle-example" class="collapse">
+          <ul class="ul-comment"><% @post.comments.each do |comment| %>
+              <li><span class="username-say"><%= comment.user.username %> said:</span> <span class="said"><%= comment.content %></span></li>
+          <% end %></ul>
+          </div>
+        </div>
+
+        <div class="new-comment">
+          <%= simple_form_for [@post, @comment] do |f| %>
+          <div class="d-flex">
+            <%= f.input :content, label: false, placeholder: "Write a comment", input_html: {maxlength: 30, size: 100} %>
+            <%= f.button :submit, ">>", class: "button-comment" %>
+
+          </div>
+          <% end %>
+        </div>
+
       </div>
 
     </div>
   </div>
+</div>
