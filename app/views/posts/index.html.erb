@@ -30,7 +30,7 @@
               <p><%= track.album.name %></p>
             </div>
               <div class="icons">
-                <i class="fa-regular fa-heart"></i>
+                <%= render "shared/favorite-post-link", post: post %>
                 <%= link_to post_path(post) do %>
                   <i class="fa-regular fa-comment"></i>
                 <% end %>

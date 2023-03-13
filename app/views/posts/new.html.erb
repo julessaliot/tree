@@ -7,24 +7,28 @@
   <div class="post-components">
     <div class="tracks d-flex">
       <div class="track-art">
-        <%= image_tag "#{params[:track_image]}" %>
+        <%= image_tag @track.image %>
       </div>
       <div class="track-info">
         <%= image_tag "icon-white.png", class:"logo-white" %>
         <div class="writing">
-          <div class="track-name"><strong><%= params[:track_name] %></strong></div>
-          <div class="track-artist-album"><%= params[:track_artist] %>, <%= params[:track_album] %></div>
+          <div class="track-name"><strong><%= @track.name %></strong></div>
+          <div class="track-artist-album"><%= @track.artist %>, <%= @track.album %></div>
         </div>
       </div>
     </div>
     <br>
     <%= simple_form_for @post do |f| %>
-      <%= f.input :content, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Caption" %>
-      <%= f.input_field :track_id, as: :hidden, value: params[:track_id] %>
-      <%= f.input_field :track_image, as: :hidden, value: params[:track_image] %>
+      <%= f.input :content, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Caption", maxlength: 100 %>
+      <%= f.input_field :track_id, as: :hidden, value: @track.id %>
+      <%= f.input_field :track_image, as: :hidden, value: @track.image %>
+      <%= f.input_field :track_name, as: :hidden, value: @track.name %>
+      <%= f.input_field :track_album, as: :hidden, value: @track.album %>
+      <%= f.input_field :track_artist, as: :hidden, value: @track.artist %>
       <br>
       <div class="post-buttons">
       <%= f.submit "   Post   ", class: "post-button" %>
+      <%= link_to "Delete", search_posts_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "button-delete-post" %>
       </div>
     <% end %>
   </div>
