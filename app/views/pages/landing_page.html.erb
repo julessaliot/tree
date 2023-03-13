@@ -13,21 +13,22 @@
     <h2>OF FRIENDS</h2>
   </div>
   <div class="words-tree">
-    <h1 class="first"><strong>LISTEN. <span style="color: white;">SHARE.</span><strong></h1>
-    <h1 class="second"><strong>DISCOVER.<strong></h1>
-    <h1 class="third"><strong><span style="color: white;">CONNECT!</span><strong></h1>
-  </div>
-  <br>
-  <div class="skip">
-    <% if current_user.nil? %>
-      <%= link_to new_user_session_path do %>
-        <i class="fa-solid fa-angles-right" style="color: white"></i>
-      <% end %>
-    <% else %>
-      <%= link_to home_path do %>
-        <i class="fa-solid fa-angles-right" style="color: white"></i>
-      <% end %>
-    <% end %>
+    <h1 class="first"><strong>LISTEN. <span style="color: white;">SHARE.</span></strong></h1>
+    <h1 class="second"><strong>DISCOVER.</strong></h1>
+    <h1 class="third">
+      <strong><span style="color: white;">CONNECT!</span></strong>
+      <div class="skip">
+        <% if current_user.nil? %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa-solid1 fa-angles-right" style="color: white"></i>
+          <% end %>
+        <% else %>
+          <%= link_to home_path do %>
+            <i class="fa-solid1 fa-angles-right" style="color: white"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </h1>
   </div>
 </div>
 
