@@ -19,16 +19,16 @@
     </div>
     <br>
     <%= simple_form_for @post do |f| %>
-      <%= f.input :content, input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Caption", maxlength: 100 %>
+      <%= f.input :content, wrapper_html: { style: "margin-bottom: 0px !important" },input_html: {value: "", style: "color: white; background-color: #1B1B1B"}, label: false, placeholder: "Caption", maxlength: 100 %>
       <%= f.input_field :track_id, as: :hidden, value: @track.id %>
       <%= f.input_field :track_image, as: :hidden, value: @track.image %>
       <%= f.input_field :track_name, as: :hidden, value: @track.name %>
       <%= f.input_field :track_album, as: :hidden, value: @track.album %>
       <%= f.input_field :track_artist, as: :hidden, value: @track.artist %>
       <br>
-      <div class="post-buttons">
-      <%= f.submit "   Post   ", class: "post-button" %>
+      <div class="post-buttons d-flex">
       <%= link_to "Delete", search_posts_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "button-delete-post" %>
+      <%= f.submit "   Post   ", class: "post-button" %>
       </div>
     <% end %>
   </div>
