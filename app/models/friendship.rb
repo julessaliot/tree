@@ -19,4 +19,12 @@ class Friendship < ApplicationRecord
       errors.add(:asker_id, "friendship request already sent")
     end
   end
+
+  def accepted
+    update(confirmed: true)
+  end
+
+  def declined
+    update(confirmed: false)
+  end
 end
