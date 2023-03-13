@@ -1,0 +1,9 @@
+<%= link_to post_favorites_path(post),
+            data: {
+              controller: "favorite-button",
+              action: "click->favorite-button#favorite",
+              favorite_button_favorited_value: current_user.favorites?(post),
+              favorite_button_favorite_id_value: (Favorite.find_by(user: current_user, post: post).id unless Favorite.find_by(user: current_user, post: post).nil?)
+            } do %>
+  <i data-favorite-button-target="icon" class="fa-<%= current_user.favorites?(post) ? 'solid' : 'regular' %> fa-heart "></i>
+<% end %>

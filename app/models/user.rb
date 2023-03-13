@@ -3,11 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
-  # has_many :posts
+  has_many :posts
   # has_many :friendships_as_asker, class_name: "Friendship", foreign_key: :asker_id
   # has_many :friendships_as_receiver, class_name: "Friendship", foreign_key: :receiver_id
   # has_many :favorites, through: :posts
   # has_many :comments, through: :posts
+  has_many :favorites, through: :posts, dependent: :destroy
 
   def self.from_omniauth(auth)
     if User.find_by(email: auth.info.email)
@@ -22,4 +23,13 @@ class User < ApplicationRecord
     user
   end
 
+  # UPDATED ASSOCIATION ABOVE + METHOD BELOW TO CHECK IF USER HAS LIKED A GIVEN POST AND RETURN THE LIKE RECORD
+  # ASSOCIATED WITH THE POST AND THE USER:
+  def favorites?(post)
+    favorites.exists?(post_id: post.id)
+  end
+
+  def favorites_for(post)
+    favorites.find_by(post_id: post.id)
+  end
 end

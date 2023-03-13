@@ -5,9 +5,7 @@ export default class extends Controller {
   connect() {
     window.onSpotifyIframeApiReady = (IFrameAPI) => {
       let iframes = document.querySelectorAll('#embed-iframe')
-      console.log(iframes)
       iframes.forEach(element => {
-      console.log(element)
       let options = {
           uri:  element.dataset.uri
         };
