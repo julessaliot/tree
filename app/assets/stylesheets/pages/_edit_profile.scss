@@ -1,0 +1,86 @@
+.edit-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0px 10px 15px;
+}
+
+.edit-profile h3{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #C2FC7A;
+  margin-top: 36px;
+}
+
+.form-inputs {
+  color: #87DB1F !important;
+  background-color: transparent !important;
+  border-radius: 10px;
+  border-color: #FFFFFF !important;
+  width: 85vw;
+  margin-top: 38px;
+  margin-left: 16px;
+  margin-right: 20px;
+  justify-content: center;
+
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ced4da;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.profile-username1 {
+  margin-bottom: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 33px;
+  color:#ced4da;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.update-btn{
+  color: rgba(27, 27, 27, 1);
+  padding: 15px 123px;
+  border-radius: 50px;
+  background: #87DB1F;
+  transition: background 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.005em;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.update-btn:hover {
+  background: #C2FC7A;
+  color: rgba(27, 27, 27, 1);
+}
+
+.fa-arrow-left i {
+  display: flex;
+  justify-items: flex-start;
+  text-decoration: none !important;
+  color:#ced4da;
+  margin-top: 36px;
+}

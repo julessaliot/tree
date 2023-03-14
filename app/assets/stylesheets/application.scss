@@ -15,7 +15,13 @@
 @import "pages/new_post";
 @import "pages/show";
 @import "pages/home";
-
 @import "pages/profile";
-
 @import "pages/favorites";
+
+//#main-content {
+  //z-index: -1;
+//}
+
+body {
+  min-height: 100vh;
+}

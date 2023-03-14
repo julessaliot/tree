@@ -17,15 +17,13 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :destroy]
 
   get '/profile', to: 'users#profile'
-  post '/profile/edit', to: 'users/profile#edit'
+  get '/profile/edit', to: 'users#edit', as: :profile_edit
 
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
 
-  resources :users, only: %i[index show] do
-    get 'profile', on: :member #user
-  end
+  resources :users, only: %i[index show edit update]
 
   resources :friendships, only: %i[new index update edit create destroy]
 end

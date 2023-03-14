@@ -2,7 +2,7 @@
 
   <div class="search-part">
 
-    <h1>Hi Username!</h1>
+    <h1>Hi <%= current_user.username %></h1>
     <h3>What song is on your mind?</h3>
     <%= simple_form_for :search, url: search_posts_path, method: "GET" do |f| %>
       <%= f.input :tracks, input_html: {value: "", style: "color: white; background-color: #1B1B1B; height: 50px;"}, label: false, placeholder: "Song name" %>

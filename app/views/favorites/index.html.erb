@@ -1,5 +1,5 @@
 <div class="favorites-list">
-  <h1>Planted Songs</h1>
+  <h1>My Liked Songs</h1>
   <% @favorites.each do |favorite| %>
     <% track = RSpotify::Track.find(favorite.post.spotify_track_id) %>
     <div class="favorites d-flex">
