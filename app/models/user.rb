@@ -3,13 +3,24 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
+
+  has_many :received_friendships, foreign_key: :receiver_id, class_name: "Friendship"
+  has_many :asked_friendships, foreign_key: :asker_id, class_name: "Friendship"
+
+  has_many :received_friends, through: :received_friendships, source: 'asker'
+  has_many :asked_friends, through: :asked_friendships, source: 'receiver'
+
   has_many :posts
-  # has_many :friendships_as_asker, class_name: "Friendship", foreign_key: :asker_id
-  # has_many :friendships_as_receiver, class_name: "Friendship", foreign_key: :receiver_id
-  # has_many :favorites, through: :posts
-  # has_many :comments, through: :posts
   has_many :favorites, through: :posts, dependent: :destroy
   has_one_attached :photo
+
+  def friends
+    received_friends.where(friendships: { status: 2 }) + asked_friends.where(friendships: { status: 2 })
+  end
+
+  def pending_friends
+    received_friends.where(friendships: { status: 1 }) + asked_friends.where(friendships: { status: 1 })
+  end
 
   def self.from_omniauth(auth)
     if User.find_by(email: auth.info.email)

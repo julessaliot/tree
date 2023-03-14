@@ -23,8 +23,7 @@ Rails.application.routes.draw do
 
   get '/home', to: 'pages#home'
 
+  resources :users, only: %i[index show edit update]
 
-  resources :users, only: %i[index show edit update] do
-    resources :friendships, only: %i[new index update edit create destroy]
-  end
+  resources :friendships, only: %i[new index update edit create destroy]
 end

@@ -1,15 +1,22 @@
-<div class="pending-container">
-  <h2>Friend requests received</h2>
+<div class="user-contain d-flex">
+
+  <h1 class="username"><%= current_user.username %></h1>
+  <p><%= current_user.bio %></p>
+
+<div class="friends-contain">
+  <div class="friends-info d-flex">
+      <h2>Friends:</h2>
+      <% current_user.friends.each do |friend| %>
+        <p><%= friend.username %></p>
+      <% end %>
+    </div>
+
+    <div class="pending-container">
+      <h2>Pending Friends:</h2>
+      <% current_user.pending_friends.each do |friend| %>
+        <p><%= friend.username %></p>
+      <% end %>
+    </div>
 </div>
 
-<div class="sent-container">
-  <h2>Friend requests sent</h2>
-</div>
-
-<div class="friendships-container">
-  <h2>All friends</h2>
-</div>
-
-<div class="users-container">
-  <h2>Add friends</h2>
 </div>
