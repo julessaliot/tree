@@ -18,16 +18,14 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#profile'
   post '/profile/edit', to: 'users/profile#edit'
-  
+
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
 
-
-
-
   resources :users, only: %i[index show] do
-    resources :friendships, only: %i[new index update edit create destroy]
     get 'profile', on: :member #user
   end
+
+  resources :friendships, only: %i[new index update edit create destroy]
 end

@@ -1,13 +1,14 @@
 class FriendshipsController < ApplicationController
   before_action :find_friendship, only: %i[edit update destroy]
 
+  def new
+    @friendship = Friendship.new
+  end
+  
   def index
     @friendships = Friendship.all
   end
 
-  def new
-    @friendship = Friendship.new
-  end
 
   def create
     @friendship.receiver = @receiver
