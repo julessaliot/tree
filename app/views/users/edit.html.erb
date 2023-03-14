@@ -1,0 +1,37 @@
+<div class="profile-contain d-flex">
+  <div class="edit-profile">
+    <div class="form-inputs">
+      <%= link_to profile_path do %>
+        <i class="fa-solid fa-arrow-left", style="color: white"></i>
+      <% end %>
+
+      <h3>Edit Profile</h3>
+
+      <%= simple_form_for @user do |f| %>
+        <%= f.error_notification %>
+        <h4 class="profile-username1"><%= @user.username %></h4>
+        <div class="profile-pic"><%= f.input :photo, as: :file %></div>
+
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <%= f.input :username,
+                  hint: "",
+                  required: false,
+                  input_html: { autocomplete: "Username" } %>
+
+        <%= f.input :bio,
+                  hint: "",
+                  required: false,
+                  input_html: { autocomplete: "About me" } %>
+        <%= f.input :interests,
+                  hint: "",
+                  required: false,
+                  input_html: { autocomplete: "Interests" } %>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class:"update-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

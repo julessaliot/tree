@@ -3,7 +3,11 @@
     <%= image_tag "favicon.png", class: "navbar-logo" %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+      <% if user_signed_in? && current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class: "navbar-avatar" %>
+      <% else %>
+        <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
+      <% end %>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

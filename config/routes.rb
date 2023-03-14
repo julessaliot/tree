@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "pages#landing_page"
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup', edit: 'profile/edit' }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
   get '/auth/spotify', as: 'spotify_auth'
   get '/auth/spotify/callback', to: 'users#spotify'
@@ -17,16 +17,14 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :destroy]
 
   get '/profile', to: 'users#profile'
+  get '/profile/edit', to: 'users#edit', as: :profile_edit
 
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
 
 
-
-
-  resources :users, only: %i[index show] do
+  resources :users, only: %i[index show edit update] do
     resources :friendships, only: %i[new index update edit create destroy]
-    get 'profile', on: :member #user
   end
 end
