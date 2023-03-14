@@ -5,13 +5,14 @@
 }
 
 .favorites-list h1 {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
   color: #C2FC7A;
-  margin-left: 12px;
+  margin-left: 24px;
+  margin-bottom: 24px;
 }
 
 .favorites {
@@ -25,8 +26,14 @@
   margin-bottom: 8px;
 }
 
+
 .favorite-track-art {
   margin: 10px 3px 10px 10px;
+
+}
+
+.favorite-track-art img{
+  height: 64px;
 }
 
 .favorite-track-info {
@@ -38,6 +45,7 @@
 
 .favorite-writing {
   margin-top: 5px;
+
 }
 
 .favorite-track-name {
@@ -51,6 +59,7 @@
    -webkit-line-clamp: 1;
            line-clamp: 1;
    -webkit-box-orient: vertical;
+   font-size: 12px;
 }
 
 .favorite-track-artist-album {
@@ -64,4 +73,5 @@
    -webkit-line-clamp: 1;
            line-clamp: 1;
    -webkit-box-orient: vertical;
+   font-size: 14px;
 }
