@@ -23,6 +23,10 @@
   margin-bottom: 0;
 }
 
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 .navbar-avatar {
   height: 40px;
   width: 40px;
@@ -31,8 +35,6 @@
   margin-top: 24px;
   margin-right: 24px;
 }
-
-
 
 .navbar-lewagon {
   justify-content: space-between;

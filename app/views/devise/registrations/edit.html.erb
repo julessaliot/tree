@@ -11,6 +11,7 @@
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
+            <%= @user.errors.as_json %>
           <h4 class="profile-username1"><%= @user.email %></h4>
           <div class="profile-pic"><%= f.input :photo, as: :file %></div>
           <%= f.input :email, required: true, autofocus: true %>
@@ -23,7 +24,7 @@
                       hint: "",
                       required: false,
                       input_html: { autocomplete: "Username" } %>
-          <%= f.input :password,
+          <%= f.input :current_password,
                       hint: "",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
