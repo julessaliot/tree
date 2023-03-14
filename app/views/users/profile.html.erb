@@ -3,13 +3,11 @@
   <h1 class="prof">Profile</h1>
 
   <div class="profile-info d-flex" >
-    <div class="profile-pic"><%= image_tag "avatar-kurt.png", class:"logo-white" %><%#= cl_image_tag @user.photo.key, height: 80px, width: 80px, crop: :fill %></div>
+    <div class="profile-pic"><%#= cl_image_tag @user.photo.key, height: 80px, width: 80px, crop: :fill %></div>
     <div class="info-user">
       <h2 class="profile-username"><%= @user.email %></h2>
       <h3 class="profile-email"><%=  @user.email %></h3>
-      <h4 class=""><%= link_to profile_edit_path(@user) do %>
-        <a class="edit-profile-btn">Edit Profile</a>
-      <% end %>
+      <h4 class=""><%= link_to("Edit Profile", edit_user_registration_path, class: "edit-profile-btn") %></h4>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "pages#landing_page"
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup', edit: 'profile/edit' }
 
   get '/auth/spotify', as: 'spotify_auth'
   get '/auth/spotify/callback', to: 'users#spotify'
@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:destroy]
 
   get '/profile', to: 'users#profile'
-  post '/profile/edit', to: 'users/profile#edit'
-  
+
   get '/terms', to: 'pages#terms'
 
   get '/home', to: 'pages#home'
