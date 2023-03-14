@@ -1,22 +1,36 @@
-<div class="user-contain d-flex">
+<div class="user-contain">
 
-  <h1 class="username"><%= current_user.username %></h1>
-  <p><%= current_user.bio %></p>
 
-<div class="friends-contain">
-  <div class="friends-info d-flex">
-      <h2>Friends:</h2>
-      <% current_user.friends.each do |friend| %>
-        <p><%= friend.username %></p>
+  <div class="profile-info d-flex" >
+    <div class="profile-pic">
+      <% if user_signed_in? && current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill%>
+      <% else %>
+        <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
       <% end %>
     </div>
-
-    <div class="pending-container">
-      <h2>Pending Friends:</h2>
-      <% current_user.pending_friends.each do |friend| %>
-        <p><%= friend.username %></p>
-      <% end %>
+    <div class="info-user">
+      <h2 class="profile-username"><%= current_user.username %></h2>
+      <h3 class="profile-email"><%= current_user.email %></h3>
+      <h4 class="profile-bio1"><%= current_user.bio %></h4>
     </div>
-</div>
+  </div>
 
+  <h1 class="prof">My Friends:</h1>
+
+  <div class="friends-info d-flex py-2 px-4">
+    <h2>Friends:</h2>
+      <div class="friends-pic">
+          <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill%><%#= cl_image_tag friend.photo.key, height: 80, width: 80, crop: :fill%>
+        <h1 class="username-friendships"><%= current_user.username %></h1>
+      </div>
+  </div>
+
+
+  <div class="pending-container">
+    <h2>Pending Friends:</h2>
+    <% current_user.pending_friends.each do |friend| %>
+      <p><%= current_user.username %></p>
+    <% end %>
+  </div>
 </div>

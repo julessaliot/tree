@@ -9,7 +9,7 @@ class Friendship < ApplicationRecord
 
   enum status: { pending: 1, accepted: 2 }
 
-  enum status: { requested: 1, accepted: 2, rejected: 3 }
+  #enum status: { requested: 1, accepted: 2, rejected: 3 }
 
   def not_self_friending
     if asker_id == receiver_id
