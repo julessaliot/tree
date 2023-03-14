@@ -3,6 +3,10 @@ class FavoritesController < ApplicationController
 
   # will be called when the user clicks on the heart icon to like a post
   # will create a new like record in database with post_id and user_id attributes
+  def index
+    @favorites = Favorite.where(user: current_user)
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @favorite = Favorite.new(user: current_user, post: @post)
