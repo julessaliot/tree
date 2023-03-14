@@ -42,8 +42,8 @@
 .login {
   background: rgba(4, 33, 2, 0.8);
   border-radius: 30px 30px 0px 0px;
-  height: 335px;
-  width: 56.2vh;
+  height: 95vw;
+  width: 103vw;
   margin-left: 0px;
 }
 .login h2 {
@@ -145,4 +145,13 @@
 
 .form-inputs-signup{
   margin-top: 20px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+.col-11-registration {
+  width: 92vw
 }
