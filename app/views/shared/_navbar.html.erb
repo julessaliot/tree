@@ -7,13 +7,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "My Planted songs", favorites_path, class: "dropdown-item nav-link" %>
+      <ul class="User-Dropdown U-open">
+        <li><a href="#">My Profile</a></li>
+          <li class="nav-item active">
+          <%= link_to "Liked songs", favorites_path, class: "dropdown-item nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-        </li>
+        <li><a href="#">My friends</a></li>
+        <li><a href="#">Logout</a></li>
       </ul>
     </div>
   </div>
