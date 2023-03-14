@@ -13,12 +13,10 @@
 
   <div class="profile-header py-2 px-4">
     <h3 class="profile-bio">About me:</h3>
-      <p>Kurt Donald Cobain was an American musician who was the founder, lead vocalist, guitarist and primary songwriter of the rock band Nirvana.
-      Through his angst-fueled songwriting and anti-establishment persona, Cobain's compositions widened the thematic conventions of mainstream rock.
-      He was heralded as a spokesman of Generation X and is highly recognized as one of the most influential alternative rock musicians.<%= @user.bio %></p>
+      <p><%= @user.bio %></p>
     <h3 class="profile-interests">Interests:</h3>
       <ul>
-        <li class="interest-li">Grunge<%= @user.interests %></li>
+        <li class="interest-li"><%= @user.interests %></li>
       </ul>
   </div>
 </div>
