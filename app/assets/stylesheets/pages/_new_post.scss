@@ -2,9 +2,9 @@
 .tracks-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #1B1B1B;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .track-name {
@@ -23,6 +23,7 @@
 .track-artist-album {
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
+  font-size: 14px;
   font-weight: 400;
   color: #BCBCBC;
   overflow: hidden;
@@ -34,7 +35,6 @@
 }
 
 .search-page {
-
   background-color: #1B1B1B;
   padding: 10px 10px 10px 10px;
 }
@@ -67,8 +67,6 @@ input[type="text"] {
   margin-bottom: 0;
 }
 
-
-
 .edit-button {
   text-decoration: none;
   box-sizing: border-box;
@@ -94,11 +92,11 @@ input[type="text"] {
 }
 
 .tracks {
-  background: rgba(52, 52, 52, 0.7);
-  border-radius: 15px;
-  width: 100%;
   padding: 7px;
-  align-items: center;
+  background: rgba(52, 52, 52, 0.7);
+  width: 320px;
+  margin-bottom: 3px;
+  border-radius: 10px;
 }
 
 .track-art {
@@ -121,7 +119,8 @@ input[type="text"] {
 }
 
 .select-track {
-  margin-left: 20px;
+  margin-left: -25px;
+  margin-top: 10px;
 }
 
 .search-part {
