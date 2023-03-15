@@ -13,38 +13,42 @@
   <h1 class="prof1">Friendships</h1>
   <div class="pending-container">
     <h2 class="pending-title">Pending Requests</h2>
-    <% @pending_friendships.each do |friendship| %>
-      <div class="pending-img d-flex">
-        <%= user_avatar(friendship.asker) %>
-      </div>
-      <div class="pending-info">
-        <h1 class="username-pending"><%= friendship.asker.username %></h1>
-      </div>
+      <div class="all-pending d-flex">
+        <% @pending_friendships.each do |friendship| %>
+          <div class="pending-img">
+            <%= user_avatar(friendship.asker) %>
+          </div>
+          <div class="pending-info">
+            <h1 class="username-pending"><%= friendship.asker.username %></h1>
+          </div>
 
-      <%= link_to accept_friendship_path(friendship),
-        data: { turbo_method: :patch }, class: 'btn btn-outline-success rounded-5' do %>
-        <i class="fa-solid fa-check"></i>
-      <% end %>
+          <%= link_to accept_friendship_path(friendship),
+            data: { turbo_method: :patch }, class: 'btn-accept' do %>
+            <i class="fa-regular fa-circle-check"></i>
+          <% end %>
 
-      <%= link_to reject_friendship_path(friendship),
-        data: { turbo_method: :patch }, class: 'btn btn-outline-light rounded-5' do %>
-        <i class="fa-solid fa-xmark"></i>
-      <% end %>
-    <% end %>
+          <%= link_to reject_friendship_path(friendship),
+            data: { turbo_method: :patch }, class: 'btn-reject' do %>
+            <i class="fa-regular fa-circle-xmark"></i>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 
-  <div class="friends-info d-flex py-2 px-4">
-    <div class="friend-info d-flex">
-      <h2 class="friends-title">Friends</h2>
-        <% @accepted_friendships.each do |friendship| %>
-          <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
-          <div class="friends-pic d-flex">
-            <%= user_avatar(friend) %>
+  <div class="friends">
+    <h2 class="friends-title">Friends</h2>
+      <div class="friend-info d-flex">
+          <% @accepted_friendships.each do |friendship| %>
+            <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
+            <div class="friends-pic">
+              <%= user_avatar(friend) %>
+            </div>
             <div class="users-info">
               <h1 class="username-friendships"><%= friend.username %></h1>
-              <h1 class="e-mail-friendships"><%= friend.email %></h1>
+              <h1 class="email-friendships"><%= friend.email %></h1>
             </div>
-          </div>
-    <% end %>
+            </div>
+          <% end %>
+      </div>
   </div>
 </div>
