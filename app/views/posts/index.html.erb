@@ -9,9 +9,9 @@
       <div class="card-category">
         <% track = RSpotify::Track.find(post.spotify_track_id) %>
         <div class="card-comment d-flex">
-          <%= user_avatar(current_user, class: "avatar-post") %>
+          <%= user_avatar(post.user, class: "avatar-post") %>
           <div class="card-user-info">
-            <h6><strong><%= current_user.username %></strong></h6>
+            <h6><strong><%= post.user.username %></strong></h6>
             <div class="post-content">
               <%= post.content %>
             </div>
