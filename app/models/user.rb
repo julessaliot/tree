@@ -14,12 +14,12 @@ class User < ApplicationRecord
   has_many :favorites, through: :posts, dependent: :destroy
   has_one_attached :photo
 
-  def friends
-    received_friends.where(friendships: { status: 2 }) + asked_friends.where(friendships: { status: 2 })
+  def pending_friendships_received
+    received_friendships.requested
   end
 
-  def pending_friends
-    received_friends.where(friendships: { status: 1 }) + asked_friends.where(friendships: { status: 1 })
+  def accepted_friendships
+    received_friendships.accepted.or(asked_friendships.accepted)
   end
 
   def self.from_omniauth(auth)

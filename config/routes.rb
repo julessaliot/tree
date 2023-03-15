@@ -25,5 +25,10 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show edit update]
 
-  resources :friendships, only: %i[new index update edit create destroy]
+  resources :friendships, only: %i[index new create] do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
 end
