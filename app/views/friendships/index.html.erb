@@ -1,11 +1,7 @@
 <div class="user-contain">
   <div class="profile-info d-flex" >
     <div class="profile-pic">
-      <% if user_signed_in? && current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill%>
-      <% else %>
-        <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
-      <% end %>
+      <%= user_avatar(current_user) %>
     </div>
     <div class="info-user">
       <h2 class="profile-username">@<%= current_user.username %></h2>
@@ -14,13 +10,16 @@
     </div>
   </div>
 
-  <h1 class="prof">My Friends:</h1>
+  <h1 class="prof1">Friendships</h1>
   <div class="pending-container">
-    <h2>Pending Friends:</h2>
+    <h2 class="pending-title">Pending Requests</h2>
     <% @pending_friendships.each do |friendship| %>
-      <%= user_avatar(friendship.asker) %>
-      <p><%= friendship.asker.email %></p>
-      <p><%= friendship.asker.username %></p>
+      <div class="pending-img d-flex">
+        <%= user_avatar(friendship.asker) %>
+      </div>
+      <div class="pending-info">
+        <h1 class="username-pending"><%= friendship.asker.username %></h1>
+      </div>
 
       <%= link_to accept_friendship_path(friendship),
         data: { turbo_method: :patch }, class: 'btn btn-outline-success rounded-5' do %>
@@ -33,17 +32,19 @@
       <% end %>
     <% end %>
   </div>
+
   <div class="friends-info d-flex py-2 px-4">
-    <h2>Friends:</h2>
-    <% @accepted_friendships.each do |friendship| %>
-      <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
-      <div class="friends-pic">
-        <%= user_avatar(friend) %>
-        <h1 class="username-friendships"><%= friend.username %></h1>
-        <h1 class="username-friendships"><%= friend.email %></h1>
-      </div>
+    <div class="friend-info d-flex">
+      <h2 class="friends-title">Friends</h2>
+        <% @accepted_friendships.each do |friendship| %>
+          <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
+          <div class="friends-pic d-flex">
+            <%= user_avatar(friend) %>
+            <div class="users-info">
+              <h1 class="username-friendships"><%= friend.username %></h1>
+              <h1 class="e-mail-friendships"><%= friend.email %></h1>
+            </div>
+          </div>
     <% end %>
   </div>
-
-
-
+</div>
