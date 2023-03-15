@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="favorite-button"
 export default class extends Controller {
-  static values = { favorited: Boolean, favoriteId: Number }
+  static values = { favorited: Boolean, favoriteId: Number, rootUrl: String }
   static targets = ['icon']
 
   favorite(event) {
@@ -12,7 +12,7 @@ export default class extends Controller {
     const url = this.element.href;
 
     if (this.favoritedValue === true) {
-      fetch(`favorites/${this.favoriteIdValue}`, { method: "DELETE",
+      fetch(`/favorites/${this.favoriteIdValue}`, { method: "DELETE",
                    headers: {
                     "Accept": "text/plain",
                     "X-CSRF-TOKEN": csrf }})
