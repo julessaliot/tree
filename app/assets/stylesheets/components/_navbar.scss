@@ -10,6 +10,10 @@
   z-index: $zindex-tooltip + 1;
 }
 
+.container-fluid {
+  background: linear-gradient(180deg, #000000, transparent);
+}
+
 .navbar-logo {
   height: 34.14px;
   margin-top: 24px;
