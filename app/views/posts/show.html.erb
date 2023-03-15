@@ -88,9 +88,7 @@
 
       <% end %>
 
-    <%= render "song_modal", post: @post, track: track %>
-
-
+    <%= render partial: "posts/song_modal", locals: { post: @post, track: track } %>
 
 
       <div class="comments-section">
@@ -106,15 +104,7 @@
           </div>
         </div>
 
-        <div class="new-comment">
-          <%= simple_form_for [@post, @comment] do |f| %>
-          <div class="d-flex">
-            <%= f.input :content, label: false, placeholder: "Write a comment", input_html: {maxlength: 30, size: 100} %>
-            <%= f.button :submit, ">>", class: "button-comment" %>
-
-          </div>
-          <% end %>
-        </div>
+        <%= render partial: "posts/new_comment_form", locals: { post: @post, comment: @comment } %>
 
       </div>
 

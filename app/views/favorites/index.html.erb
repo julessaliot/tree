@@ -1,6 +1,6 @@
 <div class="favorites-list d-flex py-2 px-4">
   <h1>My Liked Songs</h1>
-  <% @favorites.each do |favorite| %>
+  <% @favorites.reverse_each do |favorite| %>
     <% track = RSpotify::Track.find(favorite.post.spotify_track_id) %>
     <div class="favorites d-flex">
       <div class="favorite-track-art">
