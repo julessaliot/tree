@@ -7,6 +7,7 @@
   position: sticky;
   top: 0;
   background: linear-gradient(180deg, #000000, transparent);
+  z-index: $zindex-tooltip + 1;
 }
 
 .navbar-logo {
