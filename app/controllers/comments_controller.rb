@@ -10,10 +10,15 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @post = Post.find(params[:post_id])
     @comment.post = @post
-    if @comment.save
-      redirect_to post_path(@comment.post)
-    else
-      render 'posts/show', status: :unprocessable_entity
+
+    respond_to do |format|
+      format.turbo_stream do
+        if @comment.save
+          redirect_to post_path(@comment.post)
+        else
+          render status: :unprocessable_entity
+        end
+      end
     end
   end
 

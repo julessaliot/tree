@@ -1,0 +1,8 @@
+<div class="new-comment" id="<%= "#{dom_id(@post)}_form" %>">
+  <%= simple_form_for [post, comment] do |f| %>
+    <div class="d-flex">
+      <%= f.input :content, label: false, placeholder: "Write a comment", input_html: {maxlength: 30, size: 100} %>
+      <%= f.button :submit, ">>", class: "button-comment" %>
+    </div>
+  <% end %>
+</div>
