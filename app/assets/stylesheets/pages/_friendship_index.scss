@@ -1,44 +1,12 @@
 .user-contain {
   display:flex;
   flex-direction: column;
-
 }
 
-//.friends-contain {
- // background-color: white;
-//}
-
-.username-friendships {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 22px;
-  color: #C2FC7A;
+.profile-info {
+  flex: 1;
 }
 
-.friends-info {
-  display: flex;
-  align-items: center;
-  background: rgba(52, 52, 52, 0.7);
-  width: 317px;
-  margin-top: 32px;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 10px;
-  flex-direction: column;
-}
-
-.friends-info h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-  color: #f0f0f0;
-  margin-top: 36px;
-  margin-left: 24px;
-}
 .profile-pic img {
   border-radius: 50px;
   object-fit: cover;
@@ -50,37 +18,6 @@
   margin-top: 26px;
   box-shadow: 2px 2px 6px 2px rgba(24, 24, 24, 0.37);
   border: #87DB1F 1px solid;
-}
-
-.friends-pic img {
-  border-radius: 50px;
-  object-fit: cover;
-  width: 40px;
-  height: 40px;
-  left: 33px;
-  top: 93px;
-  margin-left: 24px;
-  margin-top: 26px;
-  box-shadow: 2px 2px 6px 2px rgba(24, 24, 24, 0.37);
-}
-
-.username-friendships {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
-  color: #87DB1F;
-  width: 95px;
-  height: 22px;
-  left: 110px;
-  top: 103px;
-  margin-left: 24px;
-  margin-top: 27px;
-}
-
-.profile-info {
-  flex: 1;
 }
 
 .profile-username {
@@ -116,12 +53,109 @@
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 15px;font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
   line-height: 19px;
   color: #D9D9D9;
-  width: 137px;
-  height: 19px;
-  left: 110px;
-  top: 125px;
   margin-left: 24px;
+}
+
+//----
+.pending-img {
+  border-radius: 50px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  left: 33px;
+  top: 93px;
+  margin-left: 24px;
+  margin-top: 26px;
+  box-shadow: 2px 2px 6px 2px rgba(24, 24, 24, 0.37);
+}
+
+.username-pending {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #C2FC7A;
+  margin-left: 24px;
+  margin-top: 30px;
+}
+
+.pending-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pending-title {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 19px;
+  color: #C2FC7A;
+
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 33px;
+  padding-bottom: 16px;
+  border-bottom: #87DB1F 1px solid;;
+}
+
+// --------
+
+.friends-pic img {
+  border-radius: 50px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  left: 33px;
+  top: 93px;
+  margin-left: 24px;
+  margin-top: 26px;
+  box-shadow: 2px 2px 6px 2px rgba(24, 24, 24, 0.37);
+}
+
+.username-friendships {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #C2FC7A;
+  margin-left: 24px;
+  margin-top: 30px;
+}
+
+.email-friendships {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #D9D9D9;
+  margin-left: 24px;
+}
+
+.friends-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.friends-title {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 19px;
+  color: #C2FC7A;
+
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 33px;
+  padding-bottom: 16px;
+  border-bottom: #87DB1F 1px solid;;
 }
