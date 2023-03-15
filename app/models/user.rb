@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :asked_friends, through: :asked_friendships, source: 'receiver'
 
   has_many :posts
-  has_many :favorites, through: :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_one_attached :photo
 
   def pending_friendships_received
