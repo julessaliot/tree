@@ -9,11 +9,7 @@
       <div class="card-category">
         <% track = RSpotify::Track.find(post.spotify_track_id) %>
         <div class="card-comment d-flex">
-          <% if user_signed_in? && current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class: "avatar-post" %>
-          <% else %>
-            <%= image_tag "avatar-kurt.png", class: "navbar-avatar" %>
-          <% end %>
+          <%= user_avatar(current_user, class: "avatar-post") %>
           <div class="card-user-info">
             <h6><strong><%= current_user.username %></strong></h6>
             <div class="post-content">
