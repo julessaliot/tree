@@ -42,20 +42,24 @@
       </div>
   </div>
 
-  <div class="friends">
-    <h2 class="friends-title">Friends</h2>
-      <div class="friend-info d-flex">
-          <% @accepted_friendships.each do |friendship| %>
-            <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
-            <div class="friends-pic">
-              <%= user_avatar(friend) %>
-            </div>
-            <div class="users-info">
-              <h1 class="username-friendships"><%= friend.username %></h1>
-              <h1 class="email-friendships"><%= friend.email %></h1>
-            </div>
-            </div>
-          <% end %>
+
+</div>
+
+
+<div class="friends">
+  <h2 class="friends-title">Friends</h2>
+  <div class="friend-info d-flex flex-column">
+    <% @accepted_friendships.each do |friendship| %>
+      <% friend = friendship.asker == current_user ? friendship.receiver : friendship.asker %>
+      <div class="d-flex mb-3 w-100">
+        <div class="friends-pic">
+          <%= user_avatar(friend) %>
+        </div>
+        <div class="users-info">
+          <h1 class="username-friendships"><%= friend.username %></h1>
+          <h1 class="email-friendships"><%= friend.email %></h1>
+        </div>
       </div>
+    <% end %>
   </div>
 </div>
