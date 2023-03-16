@@ -1,9 +1,14 @@
 <div class="login-page">
 
   <div class="tree-info">
-    <div class="devise-info-text">
-      <h1>SHARE YOUR <span style="color: rgba(4, 33, 2, 1);"> MUSIC,</span> SHARE YOUR <span style="color: rgba(4, 33, 2, 1);"> EMOTIONS!</span></h1>
-    </div>
+    <h1 class="d-flex flex-column">
+      <span>SHARE</span>
+      <span>YOUR</span>
+      <span style="color: rgba(4, 33, 2, 1);">MUSIC,</span>
+      <span>SHARE</span>
+      <span>YOUR</span>
+      <span style="color: rgba(4, 33, 2, 1);"> EMOTIONS!</span>
+    </h1>
     <%= image_tag("logo_light.png", width: 100) %>
   </div>
 
@@ -33,10 +38,10 @@
 
         <div class="form-actions">
           <div class="signup-button">
-            <%= link_to "Sign up", new_registration_path(resource_name), style:"font-weight: 600; font-size: 20px;" %>
+            <%= link_to "Sign up", new_registration_path(resource_name), style:"font-weight: 600; font-size: 20px; " %>
           </div>
           <div class="login-button">
-            <%= f.button :submit, "Log in", style:"font-weight: 600; font-size: 20px;" %>
+            <%= f.button :submit, "Log in", style:"font-weight: 600; font-size: 20px; " %>
           </div>
         </div>
         <% end %>
