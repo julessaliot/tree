@@ -12,14 +12,14 @@
   </head>
 
   <body>
-    <div class="page-container">
+    <div class="page-container <%= "custom-container" if action_name == "new" && controller_name == "sessions" %>">
       <% unless (controller_name == 'pages' && action_name == 'landing_page') ||
                 (controller_name == 'pages' && action_name == 'home') ||
               (controller_name == 'sessions' && action_name == 'new')  ||
               (controller_name == 'registrations' && action_name == 'new')  %>
 
         <%= render "shared/navbar" %>
-          <main id="main-content">
+          <main id="main-content" style="<%= "min-height: 100vh" if action_name == "new" && controller_name == "sessions" %>">
             <%= yield %>
           </main>
         <%= render "shared/footer" %>
