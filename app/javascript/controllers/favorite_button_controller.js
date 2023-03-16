@@ -10,6 +10,7 @@ export default class extends Controller {
 
     const csrf = document.querySelector('meta[name="csrf-token"]').content
     const url = this.element.href;
+    console.log(this.favoritedValue)
 
     if (this.favoritedValue === true) {
       fetch(`/favorites/${this.favoriteIdValue}`, { method: "DELETE",
@@ -27,6 +28,7 @@ export default class extends Controller {
                     "X-CSRF-TOKEN": csrf }})
         .then(response => response.text())
         .then(data => {
+          console.log(data)
           this.element.outerHTML = data
         })
     }
